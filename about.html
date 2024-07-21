@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+
+        <style>
+            /* MOBILE */
+            @media only screen and (min-width: 300px){
+            h1{
+            padding-top: 60px;
+            font-size: 3.5em;
+            opacity: 10%;
+            }
+            #MyClockDisplay{
+            padding-top: 20px;
+            transition: 1s;
+        }
+            #MyClockDisplay:hover{
+            padding-top: 20px;
+            transition: 1s;
+            color: rgb(0, 132, 255);
+        }
+            }
+
+            /* TABLET */
+            @media only screen and (min-width: 500px){
+            h1{
+            padding-top: 10px;
+            font-size: 6em;
+            opacity: 10%;
+            }
+            #MyClockDisplay{
+            padding-top: 20px;
+            transition: 1s;
+        }
+            #MyClockDisplay:hover{
+            padding-top: 20px;
+            transition: 1s;
+            color: rgb(0, 132, 255);
+        }
+            }
+
+            /* DESKTOP */
+            @media only screen and (min-width: 720px){
+            h1{
+            padding-top: 0px;
+            font-size: 15em;
+            /* padding-top: -480px; */
+            opacity: 10%;
+            }
+
+            #MyClockDisplay{
+            padding-top: 80px;
+            transition: 1s;
+        }
+            #MyClockDisplay:hover{
+            padding-top: 80px;
+            transition: 1s;
+            color: rgb(0, 132, 255);
+        }
+            }
+
+            * body{
+                font-family: Arial, Helvetica, sans-serif;
+                transition: 2s;
+                /* background-image: url("img/G.png"); */
+    
+            }
+            .dark-mode {
+            background-color: black;
+            color: white;}
+
+            /*  */
+            
+ 
+        .darkmode-btn{
+            padding: 5px;
+            border-radius: 10px;
+            color:black;
+            box-shadow: inset;
+        }
+        .darkmode-btn:hover{
+            border-radius: 10px;
+            color:white;
+            background-color: black;
+            box-shadow: inset;
+        }
+        .h1-head{
+            letter-spacing: 1px;
+            transition: 1s;
+
+            position: center;
+            align-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .h1-head:hover{
+            color: rgb(0, 132, 255);
+            opacity: 5%;
+            transition: 1s;
+            letter-spacing: 1px;
+        }
+            .topnav{
+                overflow: hidden;
+                /* background-color: rgb(34, 37, 39); */
+                background-color: rgb(0, 132, 255);
+                position: relative;
+                transition: 2s;
+                border-radius: 20px;
+            }
+            .topnav #myLinks{
+                display: none;
+            }
+            .topnav #myLinks:hover{
+                display: none;
+
+                background-color: rgb(0, 0, 0);
+                transition: 2s;
+            }
+
+            .topnav a{
+                color: white;
+                padding: 20px 50px;
+                text-decoration: none;
+                font-size: 20px;
+                display: block;
+                
+            }
+            .topnav a.icon{
+                background: rgb(0, 225, 255);
+                display: block;
+                position: absolute;
+                right: 10px;
+                width: 50px;
+                top: 10px;
+                transition: 2s;
+                border-radius: 20px;
+
+            }
+            .topnav a.icon:hover{
+                background-color: rgb(0, 0, 0);
+                color: rgb(255, 142, 142);
+                transition: 2s;
+
+                /* box-shadow: inset 2px 16px 16px 16px rgb(64, 72, 77),
+				inset -8px -8px 12px 0 aqua;  */
+                background-color: rgb(0, 132, 255);
+                border-radius: 10px;
+                
+            }
+            .active{
+                background-color: rgb(255, 255, 255);
+                color: rgb(0, 0, 0);
+                transition: 1s;
+            }   
+            .active:hover{
+                background-color: rgb(0, 0, 0);
+                color: rgb(255, 255, 255);
+                transition: 1s;
+            }  
+            .menu-links{
+                transition: 1s;
+            }
+            
+            .menu-links:hover{
+                color: aqua;
+                font-weight: bold;
+            }
+            .fa fa-bars{
+                color: rgb(0, 0, 0);
+            }
+
+            /*  */
+
+        /*  */
+        .par-tag{
+            font-family: Times;
+            letter-spacing: 1em;
+            line-height: 20px;
+            font-weight: 20px;
+
+            position: center;
+
+            opacity: 80%;
+            padding-left: 25%;
+            padding-right: 25%;
+
+			display: flex; 
+			justify-content: center; 
+        }
+        
+        .par-tag2{
+            position: center;
+            font-family: sans-serif;
+
+            opacity: 70%;
+            padding-left: 50px;
+            padding-right: 50px;
+
+            letter-spacing: 4px; 
+			display: flex; 
+			justify-content: center; 
+        }
+
+        footer{
+            padding-top: 30px;
+            padding-left: 20px;
+          }
+
+        </style>
+        <body onmousedown="return false" onselectstart="return false"  onmouseover="typeWriter()">
+            
+    <div >
+
+        <!--  Top nave menu -->
+        <div class="topnav">
+            <a href="#" class="active" style="color: aqua; font-size: 35px;font-weight: bold;">DOT<div>
+             <button class="darkmode-btn" onclick="darkMode()">Darkmode</button>
+         </div>
+        </a>
+            <div id="myLinks">
+                <a href="index.html" class="menu-links">Home</a>
+                <a href="blog.html" class="menu-links">Blog</a>
+                <a href="reader.html" class="menu-links">Text Reader</a>
+                <a href="expense_handling.html" class="menu-links">Budget</a>
+                <a href="calendar.html" class="menu-links">Calendar</a>
+                <a href="about.html" class="menu-links">About</a>
+            </div>
+            <a href = "javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <div style="padding-left:10px">
+            <p class="par-tag2" ><b> Warm </b>Greetings</p>
+            <!-- <p class="par-tag">Countdown   </p> -->
+
+            <div class="container">
+                <div class="par-tag">
+                <p id="intro-tag">
+                </p>
+                <!-- <p>Relentlessy, harnessing.</p> -->
+                
+            </div>
+
+                <h1 class="h1-head">About</h1>
+                <h3 class="par-tag" id="time-runner"></h3>
+
+                <div id="MyClockDisplay"
+                    class="clock" onload="showTime()"> 
+                </div> 
+                
+            </div> 
+
+        </div>
+    </div>
+
+    <!-- JS -->
+     <!--  -->
+
+    <script>
+            function myFunction(){
+                var x = 
+                document.getElementById("myLinks");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                }
+                    else{
+                        x.style.display = "block";
+                    }
+                }
+    </script>
+
+
+<!-- TYPEWRITER -->
+ <!--  -->
+<script>
+    var i = 0;
+    var txt = "I am Elvndev, this is what I enjoy doing. Buidling and creating is the life for me. As a developer I tend to get carried away with the small stuff. However, impressing and having a great outcome brings a tremendous amount of joy.";
+    var speed = 250;
+    
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("intro-tag").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    </script>
+
+     <!-- DARK MODE -->
+         <script>
+             function darkMode() {
+                 var element = document.body;
+                 element.classList.toggle("dark-mode");
+             }
+         </script>
+
+<!--  -->
+
+</body>
+</html>

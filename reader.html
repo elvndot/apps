@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>Doc Reader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+</head>
+
+      <style>
+
+          /* MOBILE */
+          @media only screen and (min-width: 300px){
+          h1{
+          padding-top: 60px;
+          font-size: 3.5em;
+          opacity: 10%;
+          }
+          .file-upload{
+            width: 90%;
+        }
+          }
+
+          /* TABLET */
+          @media only screen and (min-width: 500px){
+          h1{
+          padding-top: 10px;
+          font-size: 6em;
+          opacity: 10%;
+          }
+
+          }
+
+          /* DESKTOP */
+          @media only screen and (min-width: 720px){
+          h1{
+          padding-top: 0px;
+          font-size: 10em;
+          /* padding-top: -480px; */
+          opacity: 10%;
+          }
+          .file-upload{
+            width: 97%;
+          }
+          }
+
+          * body{
+              font-family: Arial, Helvetica, sans-serif;
+              transition: 2s;
+              /* background-image: url("img/G.png"); */
+  
+          }
+          .dark-mode {
+          background-color: black;
+          color: white;}
+
+          /*  */
+
+      .darkmode-btn{
+          border-radius: 10px;
+          padding: 5px;
+          color:black;
+          box-shadow: inset;
+      }
+      .darkmode-btn:hover{
+          border-radius: 10px;
+          color:white;
+          background-color: black;
+          box-shadow: inset;
+      }
+      .h1-head{
+		position: center;
+		align-content: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+      }
+      .h1-head:hover{
+          color: rgb(0, 132, 255);
+          opacity: 5%;
+          transition: 1s;
+          letter-spacing: 1px;
+      }
+          .topnav{
+              overflow: hidden;
+              /* background-color: rgb(34, 37, 39); */
+              background-color: rgb(0, 132, 255);
+              position: relative;
+              transition: 2s;
+              border-radius: 20px;
+          }
+          .topnav #myLinks{
+              display: none;
+          }
+          .topnav #myLinks:hover{
+              display: none;
+
+              background-color: rgb(0, 0, 0);
+              transition: 2s;
+          }
+
+          .topnav a{
+              color: white;
+              padding: 20px 50px;
+              text-decoration: none;
+              font-size: 20px;
+              display: block;
+              
+          }
+          .topnav a.icon{
+              background: rgb(0, 225, 255);
+              display: block;
+              position: absolute;
+              right: 10px;
+              width: 50px;
+              top: 10px;
+              transition: 2s;
+              border-radius: 20px;
+
+          }
+          .topnav a.icon:hover{
+              background-color: rgb(0, 0, 0);
+              color: rgb(255, 142, 142);
+              transition: 2s;
+
+              /* box-shadow: inset 2px 16px 16px 16px rgb(64, 72, 77),
+      inset -8px -8px 12px 0 aqua;  */
+              background-color: rgb(0, 132, 255);
+              border-radius: 10px;
+              
+          }
+          .active{
+              background-color: rgb(255, 255, 255);
+              color: rgb(0, 0, 0);
+              transition: 1s;
+          }   
+          .active:hover{
+              background-color: rgb(0, 0, 0);
+              color: rgb(255, 255, 255);
+              transition: 1s;
+          }  
+          .menu-links{
+              transition: 1s;
+          }
+          
+          .menu-links:hover{
+              color: aqua;
+              font-weight: bold;
+          }
+          .fa fa-bars{
+              color: rgb(0, 0, 0);
+          }
+
+          /*  */
+          .file-upload{
+            padding-top: 40px;
+            border-radius: 20px;
+            color: black;
+            font-weight: bold;
+            padding: 20px;
+            background-color: aqua;
+
+            /* width: 100%; */
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+
+          }
+          .a-btn{
+            color: black;
+            background-color: rgb(0, 132, 255);
+            padding: 5px;
+            border-radius: 10px;
+            transition: 1s;
+          }
+          .a-btn:hover{
+            color: black;
+            background-color:aqua;
+            padding: 5px;
+            border-radius: 10px;
+            transition: 1s;
+          }
+          .text{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+          }
+
+          .url-link{
+            font-size: 11px;
+            letter-spacing: 10px;
+            text-underline-offset: none;
+          }
+
+          footer{
+            padding-top: 30px;
+            padding-left: 20px;
+          }
+
+          /*  */
+          /*  */
+          .container-framework{
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+
+
+            position: center;
+            align-content: center;
+            /* display: flex; */
+            
+            justify-content: center;
+            display: block;
+
+            list-style: none;
+            flex-wrap: wrap;
+            display:run-in;
+
+
+          }
+    </style>
+
+    <body onmousedown="return false" onselectstart="return false">
+
+      <div >
+  
+          <!--  Top nave menu -->
+          <div class="topnav">
+              <a href="#" class="active" style="color: aqua; font-size: 35px;font-weight: bold;">DOT<div>
+               <button class="darkmode-btn" onclick="darkMode()">Darkmode</button>
+           </div>
+          </a>
+              <div id="myLinks">
+                  <a href="index.html" class="menu-links">Home</a>
+                  <a href="blog.html" class="menu-links">Blog</a>
+                  <a href="reader.html" class="menu-links">Text Reader</a>
+                  <a href="expense_handling.html" class="menu-links">Budget</a>
+                  <a href="calendar.html" class="menu-links">Calendar</a>
+                  <a href="about.html" class="menu-links">About</a>
+              </div>
+              <a href = "javascript:void(0);" class="icon" onclick="myFunction()">
+                  <i class="fa fa-bars"></i>
+              </a>
+          </div>
+  
+
+<div class="container-framework">
+
+          <div style="padding-left:10px">
+
+              
+                <h1 class="h1-head">Read.</h1>
+                <p>Select your file.</p>
+                
+                <p><bold><div class="text">'Read File'</bold> </div>to see your file's contents.</p>
+
+                <div class="file-upload" id="binaryInput">
+                  <p id="binaryOutput">Selected file size:</p>
+
+                  <input type="file" id="fileInput"  accept=".txt, .html, .docx, .pdf, .json, .js, .py" class="a-btn" />
+                  <button onclick="readFile()" class="a-btn">Read File</button>
+
+                  <pre id="fileContents"></pre>
+                </div>
+
+          </div>
+      </div>
+
+</div>
+
+  
+      <!-- JS -->
+       <!-- NAV -->
+  
+      <script>
+              function myFunction(){
+                  var x = 
+                  document.getElementById("myLinks");
+                  if (x.style.display === "block") {
+                      x.style.display = "none";
+                  }
+                      else{
+                          x.style.display = "block";
+                      }
+                  }
+      </script>
+
+<!-- UPLOADED FILE SIZE -->
+
+<script>
+  document.getElementById('binaryInput').addEventListener('change', async function(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const buffer = e.target.result;
+      // Process the binary data
+      const info = `File size is ${buffer.byteLength} bytes.`;
+      document.getElementById('binaryOutput').innerHTML = info;
+    };
+    reader.readAsArrayBuffer(file);
+  });
+</script>
+
+
+<!--  -->
+<!--  -->
+
+    <script>
+      function readFile() {
+        const fileInput = document.getElementById("fileInput");
+        const file = fileInput.files[0]; // Get the first file selected by the user
+
+        if (file) {
+          const reader = new FileReader();
+
+          reader.onload = function (e) {
+            const contents = e.target.result;
+            document.getElementById("fileContents").textContent = contents;
+          };
+
+          reader.onerror = function (e) {
+            console.error("Error reading file:", e.target.error.message);
+          };
+
+          reader.readAsText(file); // Read the file as text
+        } else {
+          alert("Please select a file.");
+        }
+      }
+
+    </script>
+
+
+     <!-- DARK MODE -->
+     <script>
+      function darkMode() {
+          var element = document.body;
+          element.classList.toggle("dark-mode");
+      }
+  </script>
+
+  </body>
+
+  <!-- <div>
+    <footer>
+    <a href="https://www.elvndot.com" class="url-link">elvndot</a>
+    </footer>
+  </div> -->
+  
+</html>

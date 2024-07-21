@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <title>Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+
+
+      /* MOBILE */
+      @media only screen and (min-width: 300px){
+      h1{
+      padding-top: 60px;
+      font-size: 3.5em;
+      opacity: 10%;
+      }
+      }
+
+      /* TABLET */
+      @media only screen and (min-width: 500px){
+      h1{
+      padding-top: 10px;
+      font-size: 6em;
+      opacity: 10%;
+      }
+      }
+
+      /* DESKTOP */
+      @media only screen and (min-width: 720px){
+      h1{
+      padding-top: 0px;
+      font-size: 15em;
+      /* padding-top: -480px; */
+      opacity: 10%;
+      }
+      }
+
+      * body{
+          font-family: Arial, Helvetica, sans-serif;
+          transition: 2s;
+          background-image: url("img/B-dark.jpg");
+          padding-bottom: 50px;
+
+      }
+      .dark-mode {
+      background-color: black;
+      background-image: url("img/B-rotation.jpg");
+      color: white;
+      transition: 3s;}
+
+
+            /*  */
+            
+ 
+    .darkmode-btn{
+        padding: 5px;
+        border-radius: 10px;
+        color:black;
+        box-shadow: inset;
+    }
+    .darkmode-btn:hover{
+        border-radius: 10px;
+        color:white;
+        background-color: black;
+        box-shadow: inset;
+    }
+    .h1-head{
+        letter-spacing: 1px;
+        transition: 1s;
+        letter-spacing: 50px;
+
+        position: center;
+        align-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .h1-head:hover{
+        color: red;
+        opacity: 5%;
+        transition: 1s;
+        letter-spacing: 1px;
+    }
+        .topnav{
+            overflow: hidden;
+            /* background-color: rgb(34, 37, 39); */
+            background-color: black;
+            position: relative;
+            transition: 2s;
+            border-radius: 10px;
+        }
+        .topnav:hover{
+            overflow: hidden;
+            /* background-color: rgb(34, 37, 39); */
+            background-color: red;
+            position: relative;
+            transition: 2s;
+            border-radius: 10px;
+        }
+
+        .topnav #myLinks{
+            display: none;
+        }
+        .topnav #myLinks:hover{
+            display: none;
+
+            background-color: rgb(0, 0, 0);
+            transition: 2s;
+        }
+
+        .topnav a{
+            color: white;
+            padding: 20px 50px;
+            text-decoration: none;
+            font-size: 20px;
+            display: block;
+            
+        }
+
+        .topnav a.icon:hover{
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 142, 142);
+            transition: 2s;
+
+            /* box-shadow: inset 2px 16px 16px 16px rgb(255, 0, 0),
+            inset -8px -8px 12px 0 rgb(255, 0, 0); */
+
+            border-radius: 10px;
+
+            content: "hello";
+            
+        }
+        .active{
+            background-color: rgb(255, 255, 255);
+            color: rgb(255, 0, 0);
+            transition: 1s;
+        }   
+        .active:hover{
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            transition: 1s;
+        }  
+        .menu-links{
+            transition: 1s;
+        }
+        
+        .menu-links:hover{
+            color: red;
+            font-weight: bold;
+        }
+        .fa fa-bars{
+            color: rgb(0, 0, 0);
+        }
+
+/*  */
+/*  */
+/*  */
+.accordion {
+  background-color: #eee;
+  color: black;
+  cursor: pointer;
+  padding: 25px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  border-top-right-radius: 25px;
+}
+
+.active, .accordion:hover {
+  background-color: rgba(255, 56, 56, 0.664);
+}
+
+.accordion:after {
+  content: '\002B';
+  color: red;
+  font-weight: bold;
+  font-size: 2em;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0px 20px;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  background-color: white;
+  color: black;
+  font-size: 1.2em;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  transition: 1s;
+}
+.panel:hover {
+  padding: 0 18px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: rgb(250, 52, 52);
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  transition: 1s;
+}
+.h1-class{
+  color: white; 
+  transition: 1s; 
+}
+.h1-class:hover{
+color: black; 
+transition: 1s; 
+}
+
+/*  */
+/*  */
+.h2-custom{
+  color: black;
+  transition: 1s;
+  font-size: 20px; 
+  letter-spacing: 5px; 
+  text-align: center; 
+  padding-bottom: 20px;
+}
+.h2-custom:hover{
+  color: white;
+  transition: 1s;
+  font-size: 20px; 
+  letter-spacing: 5px; 
+  text-align: center; 
+  padding-bottom: 20px;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+
+</style>
+
+<body onmousedown="return false" onselectstart="return false">
+
+  <div >
+      <!--  Top nav menu -->
+      <div class="topnav">
+          <a href="#"  style="color: red; font-size: 35px;font-weight: bold;">DOT<div>
+           <button class="darkmode-btn" onclick="darkMode()">Darkmode</button>
+       </div>
+      </a>
+          <div id="myLinks">
+              <a href="index.html" class="menu-links">Home</a>
+              <a href="blog.html" class="menu-links">Blog</a>
+              <a href="reader.html" class="menu-links">Text Reader</a>
+              <a href="expense_handling.html" class="menu-links">Budget</a>
+              <a href="calendar.html" class="menu-links">Calendar</a>
+              <a href="about.html" class="menu-links">About</a>
+          </div>
+
+          <a href = "javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+          </a>
+      </div>
+
+  
+      <div style="padding-left:10px">
+
+          <div class="container">
+              <h1 class="h1-head">Blog</h1>
+          </div> 
+      </div>
+
+  </div>
+       </div>
+<!--  -->
+
+<!--  -->
+
+<h2 style="padding: 20px; font-size: 20px; letter-spacing: 25px; text-align: center; opacity: 80%; font-weight: bold;">WELCOME!</h2>
+<h2 class="h2-custom"><b>Technology Tips and Tricks.</b></h2>
+
+<!-- 1 -->
+<button class="accordion"><h3>TECHNOLOGY THAT IS YET TO ENTER THE MARKET</h3></button>
+
+<div class="panel">
+  <p style="font-size: 10px;">10 July 2024</p>
+  <p>1. Artificial Intelligence Chips For Humans.</p>
+  <p>2. Longevity Or Rather Life Extending Supplements.</p>
+  <p>3. Exact Human Hologram Machines.</p>
+  <p>4. Garments That Can Shape Shift.</p>
+  <p>5. Communicating To The Outter Space Beings And Creatures.</p>
+</div>
+
+<!-- 2 -->
+<button class="accordion"><h3>10 AMAZINGLY CREATIVE PROGRAMS AND APPLICATIONS</h3></button>
+
+<div class="panel">
+  <p style="font-size: 10px;">24 July 2024</p>
+
+
+  <p>1. Five Alternative <b>Operating Systems</b>.</p>
+  <p>Depending on your tastes and needs. These allow for an <b>immersive experience</b> with a variety of programs within each Operating System.</p>
+  <p>This list is based on functionality and is based on <b>popularity</b>.</p>
+  <ol>
+    <ul>Windows 11 Pro</ul>
+    <ul>Ubuntu, 24 Being the latest to date </ul>
+    <ul>Macintosh </ul>
+    <ul>Black Arch Linux</ul>
+    <ul>Zorin OS</ul>
+
+
+  </ol>
+
+  <p>2. <b>Aobe</b> Suite</p>
+  <ol>
+    <ul>Photoshop, for image editing.</ul>
+    <ul>After Effects, for video editing.</ul>
+    <ul>In Design, for customizing and creating documents.</ul>
+  </ol>
+
+  <p>3. <b>Fruity Loops</b> Studio</p>
+  <ol>
+    <ul>A DAW (Digital Work Station) that allows you to experience state of the art <b>music production</b>. </ul>
+  </ol>
+
+  <p>4. Vs <b>Code</b>.</p>
+  <ol>
+  <ul>Microsofts Programming Tool.</ul>
+  <ul>Which allows for a series of alternative features, code language packages to run and execute.</ul>
+  </ol>
+
+  <p>5. Four Secure <b>Web Browsers</b></p>
+  <ol>
+    <ul>Tor</ul>
+    <ul>Brave</ul>
+    <ul>Safari</ul>
+    <ul>Firefox</ul>
+  </ol>
+  <p>6. Blender</p>
+  <ol>
+    <ul>This is one of the most versatile and incredibly special 3 dimensional tools one can use.</ul>
+    <ul>It allows for 3D <b>animation, creating, customizing,</b> and rendering. </ul>
+  </ol>
+  <p>7. CMD (command line), Powershell</p>
+    <ol>
+      <ul>This is (arguably) the most <b>facinating</b> part of the computer.</ul>
+      <ul>It has immersive abilities that can allow you to manipulate the entire computer.</ul>
+      <ul>From shutting down the computer to <b>writing a program</b> from start to finish.</ul>
+    </ol>
+  <p>8. Helpful Networking Tools </p>
+  <ol>
+    <ul><b>Wireshark</b>, for capturing traffic.</ul>
+    <ul><b>Nmap</b>, for scanning networks.</ul>
+    <ul><b>Ifconfig or Ipconfig</b>, discovering your own network.</ul>
+    <ul><b>Telnet</b>, for secure remote connections.</ul>
+    <ul></ul>
+  </ol>
+  <p>9. <b>Document</b> Editing And Creating</p>
+  <ol>
+    <ul><b>Microsoft Suite or Libre Office Package</b></ul>
+    <ul>This includes excel, word, powerpoint and more in the Microsfot suite.</ul>
+    <ul>Libre office uses Writer, Impress, Calc and Draw</ul>
+    <ul>For writing and creating a variety of file formats.</ul>
+  </ol>
+  <p>10. With <b>Open Source</b> Code</p>
+  <ol>
+    <ul>There are a number of platforms with open source programs and applications, that can run bug free on your devices.</ul>
+    <ul>The primary source being <b>Github</b>.</ul>
+  </ol>
+</div>
+
+
+
+    <!-- JS -->
+  <script>
+    function myFunction(){
+        var x = 
+        document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        }
+            else{
+                x.style.display = "block";
+            }
+        }
+  </script>
+
+
+<!--  -->
+<!-- BLOG NAV -->
+  <script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      } 
+    });
+  }
+  </script>
+
+       <!-- DARK MODE -->
+       <script>
+        function darkMode() {
+          var element = document.body;
+          element.classList.toggle("dark-mode");
+        }
+      </script>
+    
+
+
+
+</body>
+</html>

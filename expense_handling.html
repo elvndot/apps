@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expenses</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+
+        <style>
+            /* MOBILE */
+            @media only screen and (min-width: 300px){
+            h1{
+            padding-top: 60px;
+            font-size: 3.5em;
+            opacity: 10%;
+            }
+            }
+
+            /* TABLET */
+            @media only screen and (min-width: 500px){
+            h1{
+            padding-top: 10px;
+            font-size: 6em;
+            opacity: 10%;
+            }
+
+            }
+
+            /* DESKTOP */
+            @media only screen and (min-width: 720px){
+            h1{
+            padding-top: 0px;
+            font-size: 15em;
+            /* padding-top: -480px; */
+            opacity: 10%;
+            }
+            }
+
+            * body{
+                font-family: Arial, Helvetica, sans-serif;
+                transition: 2s;
+                /* background-image: url("img/G.png"); */
+    
+            }
+            .dark-mode {
+            background-color: black;
+            color: white;}
+
+            /*  */
+            /*  */
+ 
+        .darkmode-btn{
+            padding: 5px;
+            border-radius: 10px;
+            color:black;
+            box-shadow: inset;
+        }
+        .darkmode-btn:hover{
+            border-radius: 10px;
+            color:white;
+            background-color: black;
+            box-shadow: inset;
+        }
+        .h1-head{
+            letter-spacing: 1px;
+            transition: 1s;
+        }
+        .h1-head:hover{
+            color: rgb(0, 132, 255);
+            opacity: 5%;
+            transition: 1s;
+            letter-spacing: 1px;
+        }
+            .topnav{
+                overflow: hidden;
+                /* background-color: rgb(34, 37, 39); */
+                background-color: rgb(0, 132, 255);
+                position: relative;
+                transition: 2s;
+                border-radius: 20px;
+            }
+            .topnav #myLinks{
+                display: none;
+            }
+            .topnav #myLinks:hover{
+                display: none;
+
+                background-color: rgb(0, 0, 0);
+                transition: 2s;
+            }
+
+            .topnav a{
+                color: white;
+                padding: 20px 50px;
+                text-decoration: none;
+                font-size: 20px;
+                display: block;
+                
+            }
+            .topnav a.icon{
+                background: rgb(0, 225, 255);
+                display: block;
+                position: absolute;
+                right: 10px;
+                width: 50px;
+                top: 10px;
+                transition: 2s;
+                border-radius: 20px;
+
+            }
+            .topnav a.icon:hover{
+                background-color: rgb(0, 0, 0);
+                color: rgb(255, 142, 142);
+                transition: 2s;
+
+                /* box-shadow: inset 2px 16px 16px 16px rgb(64, 72, 77),
+				inset -8px -8px 12px 0 aqua;  */
+                background-color: rgb(0, 132, 255);
+                border-radius: 10px;
+                
+            }
+            .active{
+                background-color: rgb(255, 255, 255);
+                color: rgb(0, 0, 0);
+                transition: 1s;
+            }   
+            .active:hover{
+                background-color: rgb(0, 0, 0);
+                color: rgb(255, 255, 255);
+                transition: 1s;
+            }  
+            .menu-links{
+                transition: 1s;
+            }
+            
+            .menu-links:hover{
+                color: aqua;
+                font-weight: bold;
+            }
+            .fa fa-bars{
+                color: rgb(0, 0, 0);
+            }
+
+            /*  */
+            /* FORMS */
+
+
+    .container { 
+	/* max-width: 800px;  */
+	margin: 0 auto; 
+	/* background-color: #f9f9f9;  */
+	padding: 20px; 
+    padding-bottom: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+	border-radius: 8px; 
+	box-shadow: 0 2px 4px rgba(118, 196, 248, 0.1); 
+} 
+        
+    form { 
+	display: flex; 
+	justify-content: center; 
+	margin-bottom: 20px; 
+} 
+
+input[type="text"], 
+input[type="number"] { 
+	padding: 20px; 
+	/* border: 4px solid rgb(0, 132, 255);  */
+	border-radius: 4px; 
+	outline: none; 
+    color: black;
+    font-size: 18px;
+
+
+    width: 100%;
+ 
+	box-sizing: border-box; 
+	margin-top: 5px; 
+} 
+
+input[type="text"]::placeholder, 
+input[type="number"]::placeholder { 
+	color: rgb(0, 132, 255); 
+} 
+
+.submit-btn{ 
+	padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 20px;
+    background-color: rgb(0, 132, 255);
+	color: white; 
+	border: none; 
+	border-radius: 4px; 
+	cursor: pointer; 
+
+    width: 25%;
+    transition: 1s;
+} 
+.submit-btn:hover { 
+	background-color: aqua; 
+    color: black;
+} 
+
+
+.submit-btn2{ 
+	/* padding: 10px 20px;  */ 
+    background-color: rgb(0, 132, 255);
+	color: white; 
+	border: none; 
+	border-radius: 4px; 
+	cursor: pointer; 
+    height: 50px;
+    width: 25%;
+    transition: 1s;
+    margin-top: 20px;
+
+} 
+.submit-btn2:hover { 
+	background-color: aqua; 
+    color: black
+} 
+
+
+.expense-table { 
+
+	border-radius: 8px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+	overflow: hidden; 
+	box-shadow: 0 4px 400px aqua; 
+
+    transition: 1s;
+} 
+
+table { 
+	width: 100%; 
+	border-collapse: collapse; 
+    transition: 1s;
+} 
+
+thead th { 
+	background-color: rgb(0, 195, 255); 
+	padding: 10px; 
+    padding-top: 25px;
+    padding-bottom: 25px;
+	text-align: left; 
+
+    transition: 1s;
+} 
+thead th:hover { 
+	background-color: rgb(3, 177, 177); 
+    /* border-left: 4px solid white; 
+    border-right: 4px solid white;  */
+	padding: 10px; 
+	text-align: left; 
+
+    transition: 1s;
+} 
+
+tbody td { 
+	padding: 10px; 
+	border-top: 1px solid #ddd; 
+    border: 5px;
+} 
+
+tbody td:hover { 
+	padding: 10px; 
+    border-width: 40px;
+	border-top: 2px solid white; 
+    border-bottom: 2px solid white; 
+    border-left: 2px solid white; 
+    border-right: 2px solid white; 
+    
+    background-color: rgb(3, 177, 177);
+    transition: 1s;
+} 
+
+.delete-btn { 
+	color: red; 
+	cursor: pointer;
+
+} 
+.delete-btn:hover { 
+	color: white; 
+	cursor: pointer;
+    font-weight: bold;
+    background-color: red;
+    transition: 1s;
+
+} 
+
+.total-amount { 
+    font-weight: bold;
+	padding: 10px; 
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+	text-align: right; 
+	background-color: aqua; 
+}   
+
+.result-container { 
+	text-align: left; 
+	margin-top: 20px; 
+	font-size: 18px; 
+    font-weight: 700;
+	color: blue;
+    padding-bottom: 50px; 
+} 
+
+</style>
+
+<body>
+
+    <div >
+
+        <!--  Top nav menu -->
+        <div class="topnav">
+            <a href="#" class="active" style="color: aqua; font-size: 35px;font-weight: bold;">DOT<div>
+                <button class="darkmode-btn" onclick="darkMode()">Darkmode</button>
+            </div>
+        </a>
+            <div id="myLinks">
+                <a href="index.html" class="menu-links">Home</a>
+                <a href="blog.html" class="menu-links">Blog</a>
+                <a href="reader.html" class="menu-links">Text Reader</a>
+                <a href="expense_handling.html" class="menu-links">Budget</a>
+                <a href="calendar.html" class="menu-links">Calendar</a>
+                <a href="about.html" class="menu-links">About</a>
+            </div>
+            <a href = "javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <div style="padding-left:10px">
+
+            <div class="container">
+                <h1 class="h1-head">Budget.</h1>
+            </div> 
+
+        </div>
+    </div>
+
+<!--  -->
+<!--  -->
+
+	<div class="container"> 
+
+		<form id="expense-form"> 
+
+			<input 
+                type="text"
+				id="expense-name"
+				placeholder="Investment Name" 
+                required 
+                autofocus
+                /> 
+
+			<input type="number"
+				id="expense-amount"
+				placeholder="Amount" 
+                required 
+                inputmode="numeric"
+                autofocus
+                /> 
+
+			<button type="submit" class="submit-btn"> 
+				<h3>Add</h3>
+			</button> 
+		</form> 
+
+		<div class="expense-table"> 
+			<table> 
+				<thead> 
+					<tr> 
+						<th>Investment</th> 
+						<th>Amount</th> 
+						<th>Action</th> 
+					</tr> 
+				</thead> 
+				<tbody id="expense-list"></tbody> 
+			</table> 
+
+			<div class="total-amount"> 
+				<strong>Total:</strong> 
+				$<span id="total-amount">0</span> 
+			</div> 
+		</div> 
+	</div> 
+
+<!--  -->
+<!-- INTEREST CALCULATOR -->
+ <!--  -->
+
+    <div class="container"> 
+
+		<h2>Investment Calculator</h2> 
+
+
+        <!-- INVESTMENT AMOUNT -->
+		<div class="input-container"> 
+			<label for="initial-investment"> 
+				<p>Amount ($):</p> 
+			</label> 
+
+			<input type="number"
+				id="initial-investment"
+                required
+				placeholder="Amount of money"
+                inputmode="numeric"
+                autofocus
+                > 
+		</div> 
+
+        <!-- INTEREST -->
+		<div class="input-container"> 
+			<label for="interest-rate"> 
+				<p>Interest Rate Per Year (%):</p> 
+			</label> 
+
+			<input type="number"
+				id="interest-rate"
+                required
+				placeholder="Annual interest rate"
+                inputmode="numeric"
+                autofocus
+                > 
+		</div> 
+
+
+        <!-- YEARS -->
+		<div class="input-container"> 
+			<label for="investment-years"> 
+				<p>Number Of Years To Invest:</p> 
+			</label> 
+
+			<input type="number"
+				id="investment-years"
+                required
+				placeholder="Number of years"
+                inputmode="numeric"
+                autofocus
+                > 
+		</div> 
+
+		<button id="calculate-button" class="submit-btn2"> 
+			<h3>Calculate</h3> 
+		</button> 
+
+		<div id="result"
+			class="result-container"> 
+		</div> 
+	</div> 
+
+
+<!--  -->
+<!--  -->
+<!--  -->
+
+    <!-- JS -->
+     <!--  -->
+
+     <script>
+        function myFunction(){
+            var x = 
+            document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            }
+                else{
+                    x.style.display = "block";
+                }
+            }
+</script>
+
+
+     <!-- DARK MODE -->
+     <script>
+        function darkMode() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+    </script>
+
+    <!--  -->
+    <!-- JAVASCRIPT EXPENSE HANDLING -->
+
+    <script>
+
+// Form, expense list, and total amount
+const expenseForm = 
+	document.getElementById("expense-form"); 
+const expenseList = 
+	document.getElementById("expense-list"); 
+const totalAmountElement = 
+	document.getElementById("total-amount"); 
+
+// Initialize expenses array from localStorage 
+let expenses = 
+	JSON.parse(localStorage.getItem("expenses")) || []; 
+
+// Function to render expenses in tabular form 
+function renderExpenses() { 
+
+	// Clear expense list 
+	expenseList.innerHTML = ""; 
+
+	// Initialize total amount 
+	let totalAmount = 0; 
+
+	// Loop through expenses array and create table rows 
+	for (let i = 0; i < expenses.length; i++) { 
+		const expense = expenses[i]; 
+		const expenseRow = document.createElement("tr"); 
+		expenseRow.innerHTML = ` 
+	<td>${expense.name}</td> 
+	<td>$${expense.amount}</td> 
+	<td class="delete-btn" data-id="${i}">Delete</td> 
+	`; 
+		expenseList.appendChild(expenseRow); 
+
+		// Update total amount 
+		totalAmount += expense.amount; 
+	} 
+
+	// Update total amount 
+	totalAmountElement.textContent = 
+		totalAmount.toFixed(2); 
+
+	// Save expenses to localStorage 
+	localStorage.setItem("expenses", 
+		JSON.stringify(expenses)); 
+} 
+
+// Function to add expense 
+function addExpense(event) { 
+	event.preventDefault(); 
+
+	// Get expense name and amount from form 
+	const expenseNameInput = 
+		document.getElementById("expense-name"); 
+	const expenseAmountInput = 
+		document.getElementById("expense-amount"); 
+	const expenseName = 
+		expenseNameInput.value; 
+	const expenseAmount = 
+		parseFloat(expenseAmountInput.value); 
+
+	// Clear form inputs 
+	expenseNameInput.value = ""; 
+	expenseAmountInput.value = ""; 
+
+	// Validate inputs 
+	if (expenseName === "" || isNaN(expenseAmount)) { 
+		alert("Please enter valid expense details."); 
+		return; 
+	} 
+
+	// Create new expense object 
+	const expense = { 
+		name: expenseName, 
+		amount: expenseAmount, 
+	}; 
+
+	// Add expense to expenses array 
+	expenses.push(expense); 
+
+	// Render expenses 
+	renderExpenses(); 
+} 
+
+// Function to delete expense 
+function deleteExpense(event) { 
+	if (event.target.classList.contains("delete-btn")) { 
+
+		// Get expense index from data-id attribute 
+		const expenseIndex = 
+			parseInt(event.target.getAttribute("data-id")); 
+
+		// Remove expense from expenses array 
+		expenses.splice(expenseIndex, 1); 
+
+		// Render expenses 
+		renderExpenses(); 
+	} 
+} 
+
+// Add event listeners 
+expenseForm.addEventListener("submit", addExpense); 
+expenseList.addEventListener("click", deleteExpense); 
+
+// Render initial expenses on page load 
+renderExpenses();
+
+</script>
+
+
+<!--  -->
+<!--  -->
+<!-- INTEREST CALCULATOR -->
+
+<script>
+
+
+document.addEventListener("DOMContentLoaded", function () { 
+	const button = 
+		document.getElementById("calculate-button"); 
+	const container = 
+		document.getElementById("result"); 
+
+	button.addEventListener("click", function () { 
+		const initialInvestment = 
+			parseFloat(document.getElementById("initial-investment").value); 
+		const interestRate = 
+			parseFloat(document.getElementById("interest-rate").value) / 100; 
+		const investmentYears = 
+			parseInt(document.getElementById("investment-years").value); 
+		let totalAmount = initialInvestment; 
+
+		for (let i = 1; i <= investmentYears; i++) { 
+			totalAmount *= (1 + interestRate); 
+		} 
+
+		container.innerHTML = 
+		`After ${investmentYears} years, you will have investmented an amount worth `+ ` $${totalAmount.toFixed(2)}.`; 
+    }); 
+}); 
+
+
+
+</script>
+
+
+</body> 
+</html>
